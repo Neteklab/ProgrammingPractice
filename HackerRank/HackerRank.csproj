@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	<GenerateProgramFile>false</GenerateProgramFile>
+	<StartupObject>JourneyToMoon</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Arrays\-New Year Chaos.cs" />
+    <Compile Remove="Arrays\Compare the Triplets.cs" />
+    <Compile Remove="Arrays\Left Rotation.cs" />
+    <Compile Remove="Arrays\Minimum Swaps 2.cs" />
+    <Compile Remove="Codility Practice.cs" />
+    <Compile Remove="Counting Valleys.cs" />
+    <Compile Remove="Electronics Shop.cs" />
+    <Compile Remove="HackerRank\Algorithms\Time Conversion.cs" />
+    <Compile Remove="HackerRank\Sherlock and Anagrams.cs" />
+    <Compile Remove="HackerRank\Two Strings.cs" />
+    <Compile Remove="Jumping on the Clouds.cs" />
+    <Compile Remove="Program.cs" />
+    <Compile Remove="Repeated String.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Arrays\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Algorithms\Journey to the Moon.23.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Algorithms\Journey to the Moon.11082889.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Algorithms\Journey to the Moon.3984.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Algorithms\Journey to the Moon.4527147.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Algorithms\Journey to the Moon.4999949998.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HackerRank\Algorithms\Journey to the Moon.4527147.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

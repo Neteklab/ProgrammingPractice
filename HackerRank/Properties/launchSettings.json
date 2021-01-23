@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HackerRank": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "OUTPUT_PATH": "CON"
+      }
+    }
+  }
+}
