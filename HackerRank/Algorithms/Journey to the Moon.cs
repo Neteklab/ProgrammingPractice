@@ -63,20 +63,20 @@ using ProgrammingPractice.Shared;
 
 public class JourneyToMoon {
 
-   static List<List<int>> GetCountryList( int[ ][ ] astronaut ) {
+   static List<List<int>> GetCountryList( int[ ][ ] astronaut ){
       var countryAstronauts = new List<List<int>>( astronaut.Length );
 
       // Arrange astronauts by countries
-      for( int i = 0; i < astronaut.Length; i++ ) {
+      for( int i = 0; i < astronaut.Length; i++ ){
          int j = 0;
          bool countryExists = false;
 
          // Merge to existing
-         while( !countryExists && j < countryAstronauts.Count ) {
-            bool a0 = countryAstronauts[ j ].Contains( astronaut[ i ][ 0 ] );
-            bool a1 = countryAstronauts[ j ].Contains( astronaut[ i ][ 1 ] );
+         while( !countryExists && j < countryAstronauts.Count ){
+            bool a0 = countryAstronauts[ j ].Contains( astronaut[ i ][ 0 ]);
+            bool a1 = countryAstronauts[ j ].Contains( astronaut[ i ][ 1 ]);
 
-            if( countryExists = ( a0 || a1 ) ) {
+            if( countryExists = ( a0 || a1 )){
 
                // Duplicated pairs
                if( a0 && a1 )
@@ -89,14 +89,14 @@ public class JourneyToMoon {
 
                // Look for second astronaut in the rest of list 
                int jj = countryAstronauts.Count - 1;
-               while( ( jj > j ) && !countryAstronauts[ jj ].Contains( remainedId ) )
+               while( ( jj > j ) && !countryAstronauts[ jj ].Contains( remainedId ))
                   --jj;
 
                // Merge remained astronaut list
-               if( jj > j ) {
+               if( jj > j ){
                   for( int ii = 0; ii < countryAstronauts[ jj ].Count; ++ii )
-                     if( !countryAstronauts[ j ].Contains( countryAstronauts[ jj ][ ii ] ) )
-                        countryAstronauts[ j ].Add( countryAstronauts[ jj ][ ii ] );
+                     if( !countryAstronauts[ j ].Contains( countryAstronauts[ jj ][ ii ]) )
+                        countryAstronauts[ j ].Add( countryAstronauts[ jj ][ ii ]);
                   countryAstronauts.RemoveAt( jj );
                }
             }
@@ -114,7 +114,7 @@ public class JourneyToMoon {
 
 
    // Complete the journeyToMoon function below.
-   static ulong journeyToMoon( int n, int[ ][ ] astronaut ) {
+   static ulong journeyToMoon( int n, int[ ][ ] astronaut ){
 
       var countryAstronauts = GetCountryList( astronaut );
 
@@ -129,7 +129,7 @@ public class JourneyToMoon {
             for( int j = i + 1; j < countryAstronauts.Count; j++ )
                Pairs += ( ulong )( countryAstronauts[ i ].Count * countryAstronauts[ j ].Count );
 
-      if( UnPaired > 0 ) {
+      if( UnPaired > 0 ){
          // Agregate unpaired with paired
          Pairs += Paired * UnPaired;
 
@@ -148,7 +148,7 @@ public class JourneyToMoon {
    [InlineData( "Algorithms/Journey to the Moon.11082889.txt" )]
    [InlineData( "Algorithms/Journey to the Moon.4999949998.txt" )]
    [InlineData( "Algorithms/Journey to the Moon.23.txt" )]
-   static void JourneyToMoonTest( string fileName ) {
+   static void JourneyToMoonTest( string fileName ){
 
       ulong expected = ulong.Parse( fileName.Split( '.' )[ 1 ]);
       //string fileName = "Algorithms/Journey to the Moon.4527147.txt";
@@ -156,16 +156,16 @@ public class JourneyToMoon {
       int n;
       int[ ][ ] astronaut;
 
-      using( var fileStream = File.OpenRead( fileName ) )
-      using( var streamReader = new StreamReader( fileStream, Encoding.UTF8, true, BufferSize ) ) {
+      using( var fileStream = File.OpenRead( fileName ))
+      using( var streamReader = new StreamReader( fileStream, Encoding.UTF8, true, BufferSize )){
          string[ ] np = streamReader.ReadLine( ).Split( ' ' );
-         n = Convert.ToInt32( np[ 0 ] );
-         int p = Convert.ToInt32( np[ 1 ] );
+         n = Convert.ToInt32( np[ 0 ]);
+         int p = Convert.ToInt32( np[ 1 ]);
          astronaut = new int[ p ][ ];
-         for( int i = 0; i < p; i++ ) {
+         for( int i = 0; i < p; i++ ){
             astronaut[ i ] = Array.ConvertAll(
                streamReader.ReadLine( ).Split( ' ' ),
-               astronautTemp => Convert.ToInt32( astronautTemp ) );
+               astronautTemp => Convert.ToInt32( astronautTemp ));
          }
       }
       ulong result = journeyToMoon( n, astronaut );
@@ -173,7 +173,7 @@ public class JourneyToMoon {
    }
 
    
-   static void Main( string[ ] args ) {
+   static void Main( string[ ] args ){
 
       //JourneyToMoonTest( );
 
@@ -183,14 +183,14 @@ public class JourneyToMoon {
 
       string[ ] np = Console.ReadLine( ).Split( ' ' );
 
-      int n = Convert.ToInt32( np[ 0 ] );
+      int n = Convert.ToInt32( np[ 0 ]);
 
-      int p = Convert.ToInt32( np[ 1 ] );
+      int p = Convert.ToInt32( np[ 1 ]);
 
       int[ ][ ] astronaut = new int[ p ][ ];
 
-      for( int i = 0; i < p; i++ ) {
-         astronaut[ i ] = Array.ConvertAll( Console.ReadLine( ).Split( ' ' ), astronautTemp => Convert.ToInt32( astronautTemp ) );
+      for( int i = 0; i < p; i++ ){
+         astronaut[ i ] = Array.ConvertAll( Console.ReadLine( ).Split( ' ' ), astronautTemp => Convert.ToInt32( astronautTemp ));
       }
 
       ulong result = journeyToMoon( n, astronaut );
