@@ -24,6 +24,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Algorithms\Number Line Jumps\Number Line Jumps - Copy.NO.txt" />
+    <None Remove="Algorithms\Number Line Jumps\Number Line Jumps.NO.txt" />
+    <None Remove="Algorithms\Number Line Jumps\Number Line Jumps.YES.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Algorithms\Number Line Jumps\Number Line Jumps - Copy.NO.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Algorithms\Number Line Jumps\Number Line Jumps.NO.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Algorithms\Number Line Jumps\Number Line Jumps.YES.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Arrays\" />
   </ItemGroup>
 
